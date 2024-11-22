@@ -42,7 +42,7 @@ const BlogListing: React.FC<BlogListingProps> = ({ content }) => {
               </h1>
 
               <p className="tw-font-normal tw-text-base tw-text-slate-500 tw-mb-4 tw-relative tw-z-50">
-              {article.Subtitle}
+                {article.Subtitle}
               </p>
 
               <button className="tw-border tw-px-4 tw-py-1 tw-rounded-lg tw-border-gray-500 tw-text-gray-300">
