@@ -3,8 +3,13 @@ import HelloIsland from "@components/HelloIsland";
 import BlogListing from "@components/BlogListing";
 //import AnotherComponent from "AnotherComponent/AnotherComponent";
 
-// Map component names to actual components
-const componentsMap: { [key: string]: React.FC<any> } = {
+type ComponentMap = {
+  // 'any' used for demo purposes
+  // For better type safety, use a mapped type with specific prop definitions per component.
+  [key: string]: (props: any) => JSX.Element;
+};
+
+const componentsMap: ComponentMap = {
   HelloIsland,
   BlogListing,
   //AnotherComponent,
@@ -29,12 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Extract props from data-content attribute
+    // Extract content props from data-content attribute
     const contentData = element.getAttribute("data-content");
     const content = contentData ? JSON.parse(contentData) : {};
 
-    // Render the component into the element
+    // Render the component and pass content props
     const root = createRoot(element);
-    root.render(<Component content={content} />);
+    root.render(<Component {...content} />);
   });
 });
