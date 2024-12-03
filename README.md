@@ -38,4 +38,4 @@ dotnet run
 
 Unattended install is enabled.
 
-Desired password should be set in the `appsettings.Developmen.json`
+Desired password should be set in the `appsettings.Development.json`
